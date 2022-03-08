@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://unpkg.com/blockly"></script>
+    <!-- <script src="./node_modules/blockly/blockly_compressed.js"></script>
+    <script src="./node_modules/blockly/blocks_compressed.js"></script> -->
+    <!-- <script src="./node_modules/blockly/msg/js/en.js"></script> -->
+    <!-- <script src="scripts/music_maker.js"></script>
+    <script src="scripts/sound_blocks.js"></script> -->
+    <script src="led.js"></script>
+    <script src="setup_loop.js"></script>
+    <script src="./main.js"></script>
+
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        
+        .b {
+            vertical-align: text-top;
+        }
+    </style>
+</head>
+
+
+<body onload="main()">
+    <table>
+        <tr>
+            <td>
+                <div id="blocklyDiv" style="height: 600px; width: 1000px;"></div>
+            </td>
+            <td class="b" style="width: 300px;">
+                <button onclick="getCode()">gen Code</button>
+                <h1>Source Code</h1>
+                <div id="code">
+                    <pre>
+//Project -- Blinking a LED
+/*
+Description: turn LED on and off every other second.
+*/
+int ledPin = 10;
+void setup() {
+pinMode(ledPin, OUTPUT);
+}
+void loop() {
+digitalWrite(ledPin,HIGH);
+delay(1000);
+digitalWrite(ledPin,LOW);
+delay(1000);
+}
+                  </pre>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+
+</body>
+
+</html>
